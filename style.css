@@ -1,0 +1,268 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  background: #f0fdf4;
+  color: #1f2937;
+  overflow-x: hidden; /* prevents side scroll */
+}
+
+/* HEADINGS */
+h1 {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+p {
+  padding-bottom: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  background: #14532d;
+  color: white;
+  padding: 1rem 1.5rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-btn {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #f87171;
+}
+
+/* MOBILE MENU */
+.mobile {
+  display: none;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.mobile.show {
+  display: flex;
+}
+
+.desktop {
+  display: none;
+}
+
+/* HERO SECTION */
+.hero {
+  width: 100%;
+  height: 100vh;
+  padding: 6rem 0 2rem; /* removed side padding */
+
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("./images/ee.jpg") center/cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+/* REMOVE PAGE PADDING ONLY FOR HERO */
+#home.page.hero {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding: 12rem;
+}
+
+/* HERO CARD */
+.overlay-box {
+  background: rgba(0,0,0,0.5);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  color: white;
+
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* BUTTON */
+.book-btn {
+  background-color: #dc2626;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1.5rem;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  background: #910a0a;
+}
+
+.book-btn:active {
+  background-color: #b90000;
+}
+
+/* PAGES */
+.page {
+  display: none;
+  padding: 4rem 1.5rem;
+  animation: fade 0.4s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* GALLERY */
+.gallery-section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 4rem 1.5rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+/* ROOMS */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.room-card {
+  background: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.room-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* WHATSAPP */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: #16a34a;
+  padding: 0.6rem;
+  border-radius: 50%;
+  display: flex;
+}
+
+.wa-icon {
+  width: 30px;
+}
+
+/* FOOTER */
+.footer {
+  background: #14532d;
+  color: #dcfce7;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .desktop {
+    display: flex;
+  }
+
+  .menu-btn,
+  .mobile {
+    display: none;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 4rem 0 2rem; /* no side padding */
+  }
+
+  .overlay-box {
+    width: 95%;
+    padding: 1.5rem;
+    border-radius: 1.2rem;
+  }
+
+  .overlay-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .overlay-box p {
+    font-size: 1rem;
+  }
+
+  .book-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
